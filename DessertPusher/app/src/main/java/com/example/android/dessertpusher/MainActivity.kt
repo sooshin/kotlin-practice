@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
             onDessertClicked()
         }
 
-        // Setup dessertTimer
+        // Setup dessertTimer, passing in the lifecycle
         dessertTimer = DessertTimer(this.lifecycle)
 
         // If there is a savedInstanceState bundle, then you're "restarting" the activity
@@ -185,6 +185,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
         Timber.i("onSaveInstanceState Called")
     }
 
+    /** Lifecycle Methods **/
     override fun onStart() {
         super.onStart()
         Timber.i("onStart Called")
